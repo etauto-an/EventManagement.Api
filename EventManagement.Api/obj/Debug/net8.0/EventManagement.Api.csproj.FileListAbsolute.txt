@@ -31,3 +31,4 @@
 /Users/atpje/449/EventManagement.Api/EventManagement.Api/obj/Debug/net8.0/EventManagement.Api.pdb
 /Users/atpje/449/EventManagement.Api/EventManagement.Api/obj/Debug/net8.0/EventManagement.Api.genruntimeconfig.cache
 /Users/atpje/449/EventManagement.Api/EventManagement.Api/obj/Debug/net8.0/ref/EventManagement.Api.dll
+/Users/atpje/449/EventManagement.Api/EventManagement.Api/obj/Debug/net8.0/EventManagement.Api.sourcelink.json
