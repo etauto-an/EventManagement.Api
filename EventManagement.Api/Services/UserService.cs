@@ -1,37 +1,17 @@
 using EventManagement.Api.Models;
+using EventManagement.Api.Repositories;
 
 namespace EventManagement.Api.Services
 {
   public class UserService : IUserService
   {
 
-    private static List<User> Users = new List<User>
+    private readonly IUserRepository _userRepository;
+
+    public UserService(IUserRepository userRepository)
     {
-        new User
-        {
-            Id = Guid.NewGuid(),
-            FirstName = "John",
-            LastName = "Doe",
-            Email = "john.doe@example.com",
-            CreatedAt = new DateTime(2026, 1, 15, 10, 30, 0)
-        },
-        new User
-        {
-            Id = Guid.NewGuid(),
-            FirstName = "Alice",
-            LastName = "Smith",
-            Email = "alice.smith@example.com",
-            CreatedAt = new DateTime(2026, 1, 20, 14, 45, 0)
-        },
-        new User
-        {
-            Id = Guid.NewGuid(),
-            FirstName = "Michael",
-            LastName = "Johnson",
-            Email = "michael.johnson@example.com",
-            CreatedAt = new DateTime(2026, 2, 1, 9, 15, 0)
-        }
-    };
+      _userRepository = userRepository;
+    }
     public User CreateUser(User input)
     {
       var newUser = new User
@@ -42,19 +22,18 @@ namespace EventManagement.Api.Services
         Email = input.Email,
         CreatedAt = input.CreatedAt,
       };
-      Users.Add(newUser);
 
-      return newUser;
+      return _userRepository.Add(newUser);
     }
 
     public User? GetUser(Guid id)
     {
-      return Users.FirstOrDefault(s => s.Id == id);
+      return _userRepository.GetById(id);
     }
 
     public List<User> GetUsers()
     {
-      return Users;
+      return _userRepository.GetAll();
     }
   }
 }
