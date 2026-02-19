@@ -1,6 +1,5 @@
 using EventManagement.Api.Models;
 using EventManagement.Api.Services;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventManagement.Api.Controllers
@@ -12,9 +11,9 @@ namespace EventManagement.Api.Controllers
 
         private readonly IEventService _eventService;
 
-        public EventsController()
+        public EventsController(IEventService eventService)
         {
-            _eventService = new EventService();
+            _eventService = eventService;
         }
 
         [HttpGet]
@@ -23,7 +22,7 @@ namespace EventManagement.Api.Controllers
             return Ok(_eventService.GetEvents());
         }
 
-        [HttpGet("id:guid")]
+        [HttpGet("{id:guid}")]
         public ActionResult <Event> GetEvent(Guid id)
         {            
             var _event = _eventService.GetEvent(id);
