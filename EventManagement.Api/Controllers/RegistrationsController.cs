@@ -9,15 +9,24 @@ namespace EventManagement.Api.Controllers
   public class RegistrationsController : ControllerBase
   {
     private readonly IRegistrationService _registrationService;
+    private readonly IEventService _eventService;
 
-    public RegistrationsController( IRegistrationService registrationService)
+    public RegistrationsController(IRegistrationService registrationService, IEventService eventService)
     {
       _registrationService = registrationService;
+      _eventService = eventService;
     }
 
     [HttpPost]
     public ActionResult<Registration> CreateRegistration(Guid eventId, Registration input)
     {
+        var existingEvent = _eventService.GetEvent(eventId);
+        if (existingEvent is null)
+        {
+          return NotFound();
+        }
+
+        input.EventId = eventId;
         var newRegistration = _registrationService.CreateRegistration(input);
         return Created(string.Empty, newRegistration);
     }

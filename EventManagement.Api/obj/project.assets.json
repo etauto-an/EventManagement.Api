@@ -2853,19 +2853,19 @@
     ]
   },
   "packageFolders": {
-    "/home/atpje/.nuget/packages/": {}
+    "/Users/atpje/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/atpje/449/EventManagement.Api/EventManagement.Api/EventManagement.Api.csproj",
+      "projectUniqueName": "/Users/atpje/449/EventManagement.Api/EventManagement.Api/EventManagement.Api.csproj",
       "projectName": "EventManagement.Api",
-      "projectPath": "/home/atpje/449/EventManagement.Api/EventManagement.Api/EventManagement.Api.csproj",
-      "packagesPath": "/home/atpje/.nuget/packages/",
-      "outputPath": "/home/atpje/449/EventManagement.Api/EventManagement.Api/obj/",
+      "projectPath": "/Users/atpje/449/EventManagement.Api/EventManagement.Api/EventManagement.Api.csproj",
+      "packagesPath": "/Users/atpje/.nuget/packages/",
+      "outputPath": "/Users/atpje/449/EventManagement.Api/EventManagement.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/atpje/.nuget/NuGet/NuGet.Config"
+        "/Users/atpje/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2883,6 +2883,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2931,7 +2936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.123/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.418/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
