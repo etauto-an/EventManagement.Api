@@ -22,5 +22,8 @@ namespace EventManagement.Api.Models
 
         public int Capacity {get;set;}
 
+        public ICollection<Registration> Registrations { get; set; } = new List<Registration>();
+
+
     }
 }
